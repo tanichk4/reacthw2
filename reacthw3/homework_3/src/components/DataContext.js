@@ -10,16 +10,14 @@ export const DataProvider = (props) => {
         .then(res => res.json())
         .then(json => setAlbums(json))
         .catch(error => {
-            throw(error);
+            console.log(error);
         })
         }, [])
 
-    return (
-        <>            
+    return (          
          <DataContext.Provider value={albums}>
             {props.children}
         </DataContext.Provider>
-        </>
     )
 }
 
